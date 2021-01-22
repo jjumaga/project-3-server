@@ -5,9 +5,9 @@ const PatientModel = require("./../models/Patient");
 
 const patients = [
   {
-    firstName: "Marilyn",
-    lastName: "Monroe",
-    birthDate: 01 / 06 / 1926,
+    firstName: "Edith",
+    lastName: "Piaf",
+    birthDate: 19 / 12 / 1915,
     gender: "Female",
     socialSecurityNumber: 1234567890,
   },

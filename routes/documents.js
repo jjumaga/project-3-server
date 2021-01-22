@@ -49,16 +49,18 @@ router.patch("/:id", uploader.single("document"), (req, res, next) => {
     });
 });
 
+//CREATE A DOCUMENT
 //Checked in Postman
 // http://localhost:4000/api/documents
 router.post("/", requireAuth, uploader.single("document"), (req, res, next) => {
   const updateValues = { ...req.body };
-
   if (req.file) {
     updateValues.image = req.file.path;
   }
 
-  updateValues.author = req.session.currentUser; // Retrieve the authors id from the session.
+  updateValues.author = req.session.currentUser;
+  //console.log(updateValues);
+  // updateValues.patient = updateValues.id; // Retrieve the authors id from the session.
 
   Document.create(updateValues)
     .then((document) => {
@@ -80,9 +82,8 @@ router.delete("/:id", (req, res, next) => {
   Document.findByIdAndRemove(req.params.id)
     .then((itemDocument) => {
       // res.sendStatus(204)
-      res.status(204).json({
-        message: "Successfuly deleted !",
-      });
+      console.log(itemDocument);
+      res.status(204).json(itemDocument);
     })
     .catch((error) => {
       next(error);

@@ -11,6 +11,10 @@ const documentSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "UserPro",
   },
+  patient: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Patient",
+  },
 });
 
 const Document = mongoose.model("Document", documentSchema, "documents");

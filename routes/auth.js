@@ -10,6 +10,7 @@ const salt = 10;
 router.post("/signin", (req, res, next) => {
   const { email, password } = req.body;
   UserPro.findOne({ email })
+    //.execPopulate()
     .then((userDocument) => {
       if (!userDocument) {
         return res.status(400).json({ message: "Invalid credentials" });

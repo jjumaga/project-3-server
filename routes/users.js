@@ -5,17 +5,37 @@ const Document = require("../models/Document");
 const upload = require("../config/cloudinary");
 const requireAuth = require("../middlewares/requireAuth");
 
-//new patch, add patient (through req.body), logged in user, through session
-//router.patch("/api/users/me/patient", requireAuth, upload.single("document"), (req, res, next) => {
-//  req.body.userId = req.session.currentUser;
-//  UserPro.findByIdAndUpdate(req.body.userId, { $push { patients: patient._id} })
-//  .then((userPatient) => {
-//    res.status(200).json(userPatient);
-//  })
-//  .catch(next);
-//}
-//)
+//patch userPro, add new patient
+router.patch(
+  "/me/patient",
+  requireAuth,
+  upload.single("document"),
+  (req, res, next) => {
+    UserPro.findByIdAndUpdate(
+      req.session.currentUser,
+      { $addToSet: { patients: req.body.id } },
+      { new: true }
+    )
+      .populate("Patient")
+      .then((userPatient) => {
+        res.status(200).json(userPatient);
+      })
+      .catch(next);
+  }
+);
 
+router.get("/me/patient", requireAuth, (req, res, next) => {
+  UserPro.findById(req.session.currentUser)
+    .populate("patients")
+    .then((patients) => {
+      res.status(200).json(patients);
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
+
+//update userPro
 router.patch(
   "/me",
   requireAuth,
@@ -38,6 +58,7 @@ router.patch(
   }
 );
 
+//get current userPro
 router.get("/me", requireAuth, (req, res, next) => {
   UserPro.findById(req.session.currentUser)
     .select("-password") // Remove the password field from the found document.
@@ -47,10 +68,11 @@ router.get("/me", requireAuth, (req, res, next) => {
     .catch(next);
 });
 
+//get all documents of logged in user
 router.get("/me/documents", requireAuth, (req, res, next) => {
   const currentUserId = req.session.currentUser; // We retrieve the users id from the session.
 
-  // And then get all the items matching the id_user field that matches the logged in users id.
+  // And then get all the documents matching the id_user field that matches the logged in users id.
   Document.find({ author: currentUserId })
     .then((itemDocuments) => {
       res.status(200).json(itemDocuments);

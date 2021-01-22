@@ -68,7 +68,6 @@ router.get("/isLoggedIn", (req, res, next) => {
 
   UserPro.findById(id)
     .select("-password")
-    .populate("documents")
     .then((userDocument) => {
       res.status(200).json(userDocument);
     })

@@ -34,7 +34,7 @@ router.get("/:id/documents", (req, res, next) => {
 // http://localhost:4000/api/patient/{some-id}
 router.get("/:id", (req, res, next) => {
   //Get one specific patient
-  Document.findById(req.params.id)
+  Patient.findById(req.params.id)
     .populate("documents")
     .then((patientDocument) => {
       res.status(200).json(patientDocument);

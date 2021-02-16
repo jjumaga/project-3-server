@@ -73,4 +73,17 @@ router.patch("/me", (req, res, next) => {
     .catch(next);
 });
 
+//router.delete("/:id", (req, res, next) => {
+//  // Deletes a patient
+//  Patient.findByIdAndRemove(req.params.id)
+//    .then((itemPatient) => {
+//      // res.sendStatus(204)
+//      console.log(itemPatient);
+//      res.status(204).json(itemPatient);
+//    })
+//    .catch((error) => {
+//      next(error);
+//    });
+//});
+
 module.exports = router;

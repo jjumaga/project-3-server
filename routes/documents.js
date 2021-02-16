@@ -50,12 +50,12 @@ router.patch("/:id", uploader.single("document"), (req, res, next) => {
 });
 
 //CREATE A DOCUMENT
-//Checked in Postman
+//Checked in Postmanx
 // http://localhost:4000/api/documents
 router.post("/", requireAuth, uploader.single("document"), (req, res, next) => {
   const updateValues = { ...req.body };
   if (req.file) {
-    updateValues.image = req.file.path;
+    updateValues.document = req.file.path;
   }
 
   updateValues.author = req.session.currentUser;

@@ -5,25 +5,39 @@ const PatientModel = require("./../models/Patient");
 
 const patients = [
   {
-    firstName: "Edith",
-    lastName: "Piaf",
-    birthDate: 19 / 12 / 1915,
+    firstName: "Nadine",
+    lastName: "Gilson",
+    birthDate: "12-19-1933",
     gender: "Female",
     socialSecurityNumber: 1234567890,
   },
   {
-    firstName: "Freddie",
-    lastName: "Mercurie",
-    birthDate: 05 / 09 / 1946,
+    firstName: "Thibault",
+    lastName: "Baudet",
+    birthDate: "05-09-1948",
     gender: "Male",
     socialSecurityNumber: 09876543210,
   },
   {
-    firstName: "Bob",
-    lastName: "Marley",
-    birthDate: 06 / 02 / 1945,
+    firstName: "Pierre",
+    lastName: "Manasse",
+    birthDate: "06-02-1954",
     gender: "Male",
     socialSecurityNumber: 5678901234,
+  },
+  {
+    firstName: "Chloe",
+    lastName: "Gras",
+    birthDate: "11-25-1971",
+    gender: "Female",
+    socialSecurityNumber: 8901234567,
+  },
+  {
+    firstName: "Corinne",
+    lastName: "Lacabanne",
+    birthDate: "01-30-1986",
+    gender: "Female",
+    socialSecurityNumber: 3456789012,
   },
 ];
 

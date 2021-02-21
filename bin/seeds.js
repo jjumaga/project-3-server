@@ -7,7 +7,7 @@ const patients = [
   {
     firstName: "Nadine",
     lastName: "Gilson",
-    birthDate: "12-19-1933",
+    birthDate: "19-12-1933",
     gender: "Female",
     socialSecurityNumber: 1234567890,
   },
@@ -28,14 +28,14 @@ const patients = [
   {
     firstName: "Chloe",
     lastName: "Gras",
-    birthDate: "11-25-1971",
+    birthDate: "25-11-1971",
     gender: "Female",
     socialSecurityNumber: 8901234567,
   },
   {
     firstName: "Corinne",
     lastName: "Lacabanne",
-    birthDate: "01-30-1986",
+    birthDate: "30-01-1986",
     gender: "Female",
     socialSecurityNumber: 3456789012,
   },

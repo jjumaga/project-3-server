@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const patientSchema = new Schema({
   firstName: String,
   lastName: String,
-  birthDate: String,
+  birthDate: Date,
   gender: String,
   socialSecurityNumber: Number,
   documents: [

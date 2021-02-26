@@ -4,7 +4,7 @@ const router = express.Router();
 const Patient = require("../models/Patient");
 //const requireAuth = require("../middlewares/requireAuth");
 const Document = require("../models/Document");
-//checked in postman
+
 // http://localhost:4000/api/patient
 router.get("/", (req, res, next) => {
   // Get all patients

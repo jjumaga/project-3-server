@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5c283299.chunk.css",
+    "main.js": "/static/js/main.9303cba9.chunk.js",
+    "main.js.map": "/static/js/main.9303cba9.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.09b85ec0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.09b85ec0.js.map",
+    "static/js/2.380bfc3a.chunk.js": "/static/js/2.380bfc3a.chunk.js",
+    "static/js/2.380bfc3a.chunk.js.map": "/static/js/2.380bfc3a.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.ac174c0d17a6ba3df07a0b12c4407044.js": "/precache-manifest.ac174c0d17a6ba3df07a0b12c4407044.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.5c283299.chunk.css.map": "/static/css/main.5c283299.chunk.css.map",
+    "static/js/2.380bfc3a.chunk.js.LICENSE.txt": "/static/js/2.380bfc3a.chunk.js.LICENSE.txt",
+    "static/media/home.css": "/static/media/diamondBanner.b0d5b567.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.09b85ec0.js",
+    "static/js/2.380bfc3a.chunk.js",
+    "static/css/main.5c283299.chunk.css",
+    "static/js/main.9303cba9.chunk.js"
+  ]
+}
